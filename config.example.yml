@@ -1,0 +1,21 @@
+# codewalker example config file
+# for a full list of options that can be provided:
+# see https://lifesaver.readthedocs.io/en/latest/config.html#lifesaver.bot.BotConfig
+
+# this is what you want to modify
+token: ""
+command_prefix: ""
+
+
+#
+#
+#          A WARNING:
+# DO NOT MODIFY BEYOND THIS POINT
+#
+#
+# the bot may behave weirdly if you do anything to these options!
+
+bot_class: "codewalker.bot:CodeWalker"
+
+# ok, this is fine to edit, but there is really no point.
+description: "run your code quickly and easily"
