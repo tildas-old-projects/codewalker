@@ -1,7 +1,17 @@
-def detect(lang):
+def detect(lang: str or int):
+    """
+    Tries to assume what language a user wants using limited input. May be wrong sometimes.
+
+    Arguments:
+
+    lang (str/int) - A language name or language ID.
+    """
     # note: this is a generalized thing
-    lang = lang.lower()
-    if lang == 'c':
+    if type(lang) == str:
+        lang = lang.lower()
+    elif type(lang) == int:
+        return lang
+    elif lang == 'c':
         return 4
     elif lang == 'bash':
         return 1

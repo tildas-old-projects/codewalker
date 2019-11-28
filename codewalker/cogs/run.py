@@ -10,6 +10,13 @@ class RunCode(lifesaver.Cog):
     
     @lifesaver.command()
     async def run(self, ctx, lang, code: str):
+        """
+        Run code using the Judge0 API.
+
+        NOTE: This command makes assumptions about which language version you want to use.
+        If the version the bot chose for you does not work (e.g. you want Java 9), 
+        look at https://api.judge0.com/languages and see if they have what you want.
+        """
         submission = self.judgeapi.add_submission(self.bot.session, languagedetect.detect(lang), code)
         return await ctx.send('wip')
 
