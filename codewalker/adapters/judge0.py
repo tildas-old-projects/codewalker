@@ -7,9 +7,11 @@ class Judge0:
         self.base_url_submit = 'https://api.judge0.com/submissions?wait=true'
         super().__init__(*args, **kwargs)
     
-    async def add_submission(self, session: aiohttp.ClientSession(), lang: int, code: str, stdin: str="", expected_output: str=""):
+    async def add_submission(self, session: aiohttp.ClientSession(), lang: int, code: str, stdin: str="", expected_output: str="") -> aiohttp.ClientResponse:
         """
         add_submission - Submits code to Judge0 for a run.
+
+        Returns an instance of `aiohttp.ClientResponse`.
 
         Arguments:
 

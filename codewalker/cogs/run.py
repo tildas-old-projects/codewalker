@@ -17,7 +17,8 @@ class RunCode(lifesaver.Cog):
         If the version the bot chose for you does not work (e.g. you want Java 9), 
         look at https://api.judge0.com/languages and see if they have what you want.
         """
-        submission = self.judgeapi.add_submission(self.bot.session, languagedetect.detect(lang), code)
+        submission = await self.judgeapi.add_submission(self.bot.session, languagedetect.detect(lang), code)
+        result = await submission.json()
         return await ctx.send('wip')
 
 def setup(bot):
